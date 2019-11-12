@@ -17,7 +17,7 @@ var hoth = {
 var options = {
   lat: 45,
   lng: 10,
-  zoom: 9,
+  zoom: 8,
   style: "mapbox://styles/francygranz/ck2vyoguf09q81coab8n40a0a"
 };
 
@@ -43,7 +43,7 @@ function setup() {
 
 
 function draw() {
-clear();
+  clear();
 
   //--Defining my variables of the two places and the distance between them
   var distance = calcGeoDistance(youAreHere.latitude, youAreHere.longitude, hoth.lat, hoth.lng);
@@ -72,10 +72,9 @@ clear();
   //--Title
   push();
   fill("black");
-  textSize(200);
+  textSize(100);
   stroke("aquamarine");
   strokeWeight(10);
-  text('The Road Home (with Chewie)', 200, 200);
+  text('The Road Home (with Chewie)', 100, 100);
   pop();
-
 }
