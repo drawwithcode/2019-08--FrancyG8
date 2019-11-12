@@ -17,7 +17,7 @@ var hoth = {
 var options = {
   lat: 45,
   lng: 10,
-  zoom: 6,
+  zoom: 9,
   style: "mapbox://styles/francygranz/ck2vyoguf09q81coab8n40a0a"
 };
 
@@ -43,17 +43,17 @@ function setup() {
 
 
 function draw() {
-  clear();
+clear();
 
   //--Defining my variables of the two places and the distance between them
   var distance = calcGeoDistance(youAreHere.latitude, youAreHere.longitude, hoth.lat, hoth.lng);
   distanceShort = Math.round(distance * 100) / 100;
 
   var spaceLanding = myMap.latLngToPixel(youAreHere.latitude, youAreHere.longitude);
-  image(millennium, spaceLanding.x + random(-5, 5), spaceLanding.y + random(-5, 5), 100, 100);
+  image(millennium, spaceLanding.x + random(-5, 5), spaceLanding.y + random(-5, 5), 300, 300);
 
   var planet = myMap.latLngToPixel(hoth.lat, hoth.lng);
-  image(r2d2, planet.x + random(-5, 5), planet.y + random(-5, 5), 100, 100);
+  image(r2d2, planet.x + random(-5, 5), planet.y + random(-5, 5), 300, 300);
 
   //--Text connected to the current location
   push();
@@ -72,10 +72,10 @@ function draw() {
   //--Title
   push();
   fill("black");
-  textSize(100);
+  textSize(200);
   stroke("aquamarine");
   strokeWeight(10);
-  text('The Road Home (with Chewie)', 100, 100);
+  text('The Road Home (with Chewie)', 200, 200);
   pop();
 
 }
