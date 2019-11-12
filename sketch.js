@@ -1,6 +1,6 @@
 //--Quick map to guide you home
 
-//--My Map
+//--My variables
 var myMap;
 var youAreHere;
 var canvas;
@@ -50,10 +50,10 @@ function draw() {
   distanceShort = Math.round(distance * 100) / 100;
 
   var spaceLanding = myMap.latLngToPixel(youAreHere.latitude, youAreHere.longitude);
-  image(millennium, spaceLanding.x + random(-3, 3), spaceLanding.y + random(-3, 3), 150, 150);
+  image(millennium, spaceLanding.x - 75 + random(-3, 3), spaceLanding.y - 75 + random(-3, 3), 150, 150);
 
   var planet = myMap.latLngToPixel(hoth.lat, hoth.lng);
-  image(r2d2, planet.x + random(-3, 3), planet.y + random(-3, 3), 150, 150);
+  image(r2d2, planet.x - 75 + random(-3, 3), planet.y - 75 + random(-3, 3), 150, 150);
 
   //--Text connected to the current location
   push();
@@ -63,10 +63,10 @@ function draw() {
   strokeWeight(5);
   textAlign(CENTER);
   translate(60, 0);
-  text("Chewie, we ain't home", spaceLanding.x, spaceLanding.y + 170);
-  text("Prepare for the Hyperspace Jump 'till ", spaceLanding.x, spaceLanding.y + 190);
+  text("Chewie, we ain't home", spaceLanding.x - 75, spaceLanding.y + 95);
+  text("Prepare for the Hyperspace Jump 'till ", spaceLanding.x - 75, spaceLanding.y + 115);
   textSize(40);
-  text(distanceShort + 'km', spaceLanding.x, spaceLanding.y + 230);
+  text(distanceShort + 'km', spaceLanding.x - 75, spaceLanding.y + 155);
   pop();
 
   //--Title
