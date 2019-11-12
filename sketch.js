@@ -17,7 +17,7 @@ var hoth = {
 var options = {
   lat: 45,
   lng: 10,
-  zoom: 8,
+  zoom: 5,
   style: "mapbox://styles/francygranz/ck2vyoguf09q81coab8n40a0a"
 };
 
@@ -50,29 +50,29 @@ function draw() {
   distanceShort = Math.round(distance * 100) / 100;
 
   var spaceLanding = myMap.latLngToPixel(youAreHere.latitude, youAreHere.longitude);
-  image(millennium, spaceLanding.x + random(-5, 5), spaceLanding.y + random(-5, 5), 300, 300);
+  image(millennium, spaceLanding.x + random(-3, 3), spaceLanding.y + random(-3, 3), 150, 150);
 
   var planet = myMap.latLngToPixel(hoth.lat, hoth.lng);
-  image(r2d2, planet.x + random(-5, 5), planet.y + random(-5, 5), 300, 300);
+  image(r2d2, planet.x + random(-3, 3), planet.y + random(-3, 3), 150, 150);
 
   //--Text connected to the current location
   push();
   fill("black");
-  textSize(50);
+  textSize(20);
   stroke("aquamarine");
   strokeWeight(5);
   textAlign(CENTER);
-  translate(150, 0);
-  text("Chewie, we ain't home", spaceLanding.x, spaceLanding.y + 350);
-  text("Prepare for the Hyperspace Jump 'till ", spaceLanding.x, spaceLanding.y + 400);
-  textSize(100);
-  text(distanceShort + 'km', spaceLanding.x, spaceLanding.y + 500);
+  translate(60, 0);
+  text("Chewie, we ain't home", spaceLanding.x, spaceLanding.y + 170);
+  text("Prepare for the Hyperspace Jump 'till ", spaceLanding.x, spaceLanding.y + 190);
+  textSize(40);
+  text(distanceShort + 'km', spaceLanding.x, spaceLanding.y + 230);
   pop();
 
   //--Title
   push();
   fill("black");
-  textSize(100);
+  textSize(70);
   stroke("aquamarine");
   strokeWeight(10);
   text('The Road Home (with Chewie)', 100, 100);
